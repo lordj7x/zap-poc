@@ -8,7 +8,7 @@ jobs:
       - setup_remote_docker
       - run:
           name: Downloading ZAP test
-          command: wget Shttps://github.com/zaproxy/zaproxy/releases/download/2.4.3/ZAP_2.4.3_Linux.tar.gz
+          command: wget https://github.com/zaproxy/zaproxy/releases/download/2.4.3/ZAP_2.4.3_Linux.tar.gz
       - run: tar zxf ZAP_2.4.3_Linux.tar.gz -C /opt --no-same-owner
       - run: ln -s /opt/ZAP_2.4.3 /opt/zap
       - run:
