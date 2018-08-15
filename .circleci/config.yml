@@ -2,9 +2,10 @@ version: 2
 jobs:
   build:
     docker:
-      - image: debian:stretch
+      - image: circleci/openjdk:8-jdk-node-browsers
     steps:
       - checkout
+      - setup_remote_docker
       - run:
           name: Downloading ZAP test
           command: wget -q -O - https://github.com/zaproxy/zaproxy/releases/download/2.4.3/ZAP_2.4.3_Linux.tar.gz | tar zxf - -C /opt
