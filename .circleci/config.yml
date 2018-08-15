@@ -3,6 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/openjdk:8-jdk-node-browsers
+      - image: lordj7x/circleci:node-jdk-rub-pip-v1.4
     steps:
       - checkout
       - setup_remote_docker
