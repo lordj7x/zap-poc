@@ -3,6 +3,8 @@
 import time
 from pprint import pprint
 from zapv2 import ZAPv2
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 target = 'http://127.0.0.1:8888'
 apikey = 'changeme' # Change to match the API key set in ZAP, or use None if the API key is disabled
