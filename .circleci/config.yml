@@ -15,6 +15,7 @@ jobs:
       - run:
           name: Downloading and setting up ZED init files
           command: sudo wget -O /etc/init.d/zap https://raw.githubusercontent.com/stelligent/zap/master/packer/roles/zap/files/zap-init.sh
+      - run: chmod +x /etc/init.d/zap 
       - run:
           name: Starting up... O W A S P  Z A P  P O C
           command: sudo /etc/init.d/zap start
