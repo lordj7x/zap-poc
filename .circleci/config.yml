@@ -27,4 +27,10 @@ jobs:
           command: |
              echo "Installing ZAP API via PIP"
              pip install python-owasp-zap-v2.4
+             pip install behave
              pip install flask
+      - run:
+          name: Running PENN TEST in 3...2...1...
+          command: |
+             chmod +x zap-scan.py
+             ./zap-scan.py
