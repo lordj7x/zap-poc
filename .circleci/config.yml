@@ -19,3 +19,12 @@ jobs:
       - run:
           name: Starting up... O W A S P  Z A P  P O C
           command: sudo ./zap.sh start
+      - run:
+          name: Checking O W A S P  Z A P  status...
+          command: sudo ./zap.sh status
+      - run:
+          name: Installing PENN TEST TOOLS...
+          command: |
+             echo "Installing ZAP API via PIP"
+             pip install python-owasp-zap-v2.4
+             pip install flask
