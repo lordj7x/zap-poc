@@ -11,9 +11,10 @@ jobs:
           command: wget https://github.com/zaproxy/zaproxy/releases/download/2.4.3/ZAP_2.4.3_Linux.tar.gz
       - run: sudo tar zxf ZAP_2.4.3_Linux.tar.gz -C /opt --no-same-owner
       - run: sudo ln -s /opt/ZAP_2.4.3 /opt/zap
+      - run: set -x
       - run:
           name: Downloading and setting up ZED init files
-          command: sudo wget -q -O /etc/init.d/zap https://raw.githubusercontent.com/stelligent/zap/master/packer/roles/zap/files/zap-init.sh
+          command: sudo wget -O /etc/init.d/zap https://raw.githubusercontent.com/stelligent/zap/master/packer/roles/zap/files/zap-init.sh
       - run:
           name: Starting up... O W A S P  Z A P  P O C
           command: sudo /etc/init.d/zap start
