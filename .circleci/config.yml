@@ -9,19 +9,19 @@ jobs:
       - run:
           name: Downloading ZAP test
           command: wget https://github.com/zaproxy/zaproxy/releases/download/2.4.3/ZAP_2.4.3_Linux.tar.gz
-      - run: sudo tar zxf ZAP_2.4.3_Linux.tar.gz  --no-same-owner
-      - run: sudo ln -s ./ZAP_2.4.3 /opt/zap
+      - run: tar zxf ZAP_2.4.3_Linux.tar.gz  --no-same-owner
+      - run: ln -s ./ZAP_2.4.3 /opt/zap
       - run: set -x
       - run:
           name: Downloading and setting up ZED init files
-          command: sudo wget -O ./zap.sh https://raw.githubusercontent.com/stelligent/zap/master/packer/roles/zap/files/zap-init.sh
-      - run: sudo chmod +x ./zap.sh
+          command: wget -O ./zap.sh https://raw.githubusercontent.com/stelligent/zap/master/packer/roles/zap/files/zap-init.sh
+      - run: chmod +x ./zap.sh
       - run:
           name: Starting up... O W A S P  Z A P  P O C
-          command: sudo ./zap.sh start
+          command: ./zap.sh start
       - run:
           name: Checking O W A S P  Z A P  status...
-          command: sudo ./zap.sh status
+          command: ./zap.sh status
       - run:
           name: Installing PENN TEST TOOLS...
           command: |
